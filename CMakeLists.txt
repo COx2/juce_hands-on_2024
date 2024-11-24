@@ -1,11 +1,15 @@
 cmake_minimum_required(VERSION 3.22)
 
+project(juce_hands-on_2024 VERSION 1.0.0)
+
 enable_language(CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-project(NewProject VERSION 1.0.0)
+if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    add_compile_options(/utf-8)
+endif()
 
 add_subdirectory(External/JUCE)
 
